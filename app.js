@@ -111,7 +111,15 @@ app.get('/dashboard', isAuthenticated, (req, res) => {
 
 app.get('/logout', isAuthenticated, function(req, res) {
   req.logout();
-  const returnTo = `http%3A%2F%2F${req.hostname}:${PORT}`;
+
+  let protocol = 'http';
+  if (app.get('env') === 'production') {
+    protocol = 'https';
+  }
+  let returnTo = `${protocol}%3A%2F%2F${req.hostname}`;
+  if (app.get('env') !== 'production') {
+    returnTo += `:${PORT}`;
+  }
   res.redirect(
     `https://${process.env.AUTH0_DOMAIN}/v2/logout?returnTo=${returnTo}`
   );
