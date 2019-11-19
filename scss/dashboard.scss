@@ -1,0 +1,57 @@
+@import "../node_modules/bootstrap/scss/functions";
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/mixins/_breakpoints";
+
+#brandName {
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: #2cb5e8;
+}
+
+#brandText {
+  letter-spacing: 1px;
+  color: #2cb5e8;
+}
+
+#brandImage {
+  margin-top: 15%;
+  margin-left: 35%;
+  width: 30%;
+  display: block;
+}
+
+@include media-breakpoint-only(xs) {
+  #authArea {
+    li {
+      margin-top: 20px;
+    }
+  }
+}
+
+@include media-breakpoint-only(sm) {
+  #authArea {
+    li {
+      margin-top: 20px;
+    }
+  }
+}
+
+@include media-breakpoint-only(md) {
+  #authArea {
+    li {
+      margin-top: 20px;
+    }
+  }
+}
+
+@include media-breakpoint-only(lg) {
+  #username {
+    margin-right: 20px;
+  }
+}
+
+@include media-breakpoint-only(xl) {
+  #username {
+    margin-right: 20px;
+  }
+}
